@@ -50,6 +50,7 @@ gpu/gpu-operator
 grub/grub-efi
 grub/grub2
 grub/grubby
+kata-containers
 kubernetes/armada
 kubernetes/armada-helm-toolkit
 kubernetes/chartmuseum

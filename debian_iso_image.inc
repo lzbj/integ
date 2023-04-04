@@ -419,3 +419,6 @@ trident-installer
 
 #watchdog
 watchdog
+
+#kata-containers
+kata-containers
