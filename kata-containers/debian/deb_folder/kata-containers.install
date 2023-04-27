@@ -1,4 +1,26 @@
 opt/kata/bin/containerd-shim-kata-v2 /usr/bin/
+opt/kata/bin/kata-runtime /usr/bin/
+opt/kata/bin/kata-collect-data.sh /usr/bin/
+opt/kata/share/kata-containers/vmlinux-5.4.71-84 /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz-virtiofs.container /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz.container /usr/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers-image_clearlinux_2.0.3_agent_ef11ce13ea.img /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinux-kata-v5.6-april-09-2020-84-virtiofs /usr/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers-initrd_alpine_2.0.3_agent_ef11ce13ea.initrd /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz-kata-v5.6-april-09-2020-84-virtiofs /usr/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers.img /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinux.container /usr/share/kata-containers/
+opt/kata/share/kata-containers/config-5.4.71 /usr/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers-initrd.img /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinux-virtiofs.container /usr/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz-5.4.71-84 /usr/share/kata-containers/
+opt/kata/share/kata-containers/config-kata-v5.6-april-09-2020 /usr/share/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration-qemu.toml /usr/share/defaults/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration-acrn.toml /usr/share/defaults/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration-clh.toml /usr/share/defaults/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration.toml /usr/share/defaults/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration-fc.toml /usr/share/defaults/kata-containers/
+opt/kata/share/bash-completion/completions/kata-runtime /usr/share/bash-completion/completions/
 opt/kata/bin/cloud-hypervisor
 opt/kata/bin/kata-fc
 opt/kata/bin/kata-qemu-virtiofs
