@@ -1,6 +1,7 @@
 opt/kata/bin/containerd-shim-kata-v2 /usr/bin/
 opt/kata/bin/kata-runtime /usr/bin/
 opt/kata/bin/kata-collect-data.sh /usr/bin/
+opt/kata/libexec/kata-qemu/virtiofsd  /opt/kata/libexec/kata-qemu/
 opt/kata/share/kata-containers/vmlinux-5.4.71-84 /usr/share/kata-containers/
 opt/kata/share/kata-containers/vmlinuz-virtiofs.container /usr/share/kata-containers/
 opt/kata/share/kata-containers/vmlinuz.container /usr/share/kata-containers/
