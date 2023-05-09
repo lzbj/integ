@@ -1,0 +1,63 @@
+From 3c9ab3535fdb6886e1fec03ea5f5f7f49baac94c Mon Sep 17 00:00:00 2001
+From: dliu5 <dliu5@windriver.com>
+Date: Thu, 11 May 2023 02:33:22 -0400
+Subject: [PATCH] patch to change configuration file
+
+Signed-off-by: dliu5 <dliu5@windriver.com>
+---
+ .../kata-containers/configuration-qemu.toml        | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/opt/kata/share/defaults/kata-containers/configuration-qemu.toml b/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
+index 72b0ead..b68c829 100644
+--- a/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
++++ b/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
+@@ -11,9 +11,9 @@
+ # XXX:   Type: kata
+ 
+ [hypervisor.qemu]
+-path = "/opt/kata/bin/qemu-system-x86_64"
+-kernel = "/opt/kata/share/kata-containers/vmlinux.container"
+-image = "/opt/kata/share/kata-containers/kata-containers.img"
++path = "/usr/bin/qemu-system-x86_64"
++kernel = "/var/kata/share/kata-containers/vmlinux.container"
++image = "/var/kata/share/kata-containers/kata-containers.img"
+ machine_type = "pc"
+ 
+ # List of valid annotation names for the hypervisor
+@@ -25,7 +25,7 @@ enable_annotations = []
+ # Each member of the list is a path pattern as described by glob(3).
+ # The default if not set is empty (all annotations rejected.)
+ # Your distribution recommends: ["/opt/kata/bin/qemu-system-x86_64"]
+-valid_hypervisor_paths = ["/opt/kata/bin/qemu-system-x86_64"]
++valid_hypervisor_paths = ["/usr/bin/qemu-system-x86_64"]
+ 
+ # Optional space-separated list of options to pass to the guest kernel.
+ # For example, use `kernel_params = "vsyscall=emulate"` if you are having
+@@ -125,12 +125,12 @@ disable_block_device_use = false
+ shared_fs = "virtio-fs"
+ 
+ # Path to vhost-user-fs daemon.
+-virtio_fs_daemon = "/opt/kata/libexec/kata-qemu/virtiofsd"
++virtio_fs_daemon = "/usr/kata/libexec/kata-qemu/virtiofsd"
+ 
+ # List of valid annotations values for the virtiofs daemon
+ # The default if not set is empty (all annotations rejected.)
+ # Your distribution recommends: ["/opt/kata/libexec/kata-qemu/virtiofsd"]
+-valid_virtio_fs_daemon_paths = ["/opt/kata/libexec/kata-qemu/virtiofsd"]
++valid_virtio_fs_daemon_paths = ["/usr/kata/libexec/kata-qemu/virtiofsd"]
+ 
+ # Default size of DAX cache in MiB
+ virtio_fs_cache_size = 0
+@@ -417,7 +417,7 @@ kernel_modules=[]
+ #enable_netmon = true
+ 
+ # Specify the path to the netmon binary.
+-path = "/opt/kata/libexec/kata-containers/kata-netmon"
++path = "/usr/kata/libexec/kata-containers/kata-netmon"
+ 
+ # If enabled, netmon messages will be sent to the system log
+ # (default: disabled)
+-- 
+2.29.2
+
