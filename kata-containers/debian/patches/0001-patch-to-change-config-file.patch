@@ -1,0 +1,170 @@
+From 496ff75a15994b3e467bbf4169d7cd9bc67bd681 Mon Sep 17 00:00:00 2001
+From: dliu5 <dliu5@windriver.com>
+Date: Tue, 9 May 2023 01:20:49 +0000
+Subject: [PATCH] patch to change config file.
+
+Signed-off-by: dliu5 <dliu5@windriver.com>
+---
+ .../kata-containers/configuration-qemu.toml   | 44 +++++++++----------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
+
+diff --git a/opt/kata/share/defaults/kata-containers/configuration-qemu.toml b/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
+index 72b0ead..69e4357 100644
+--- a/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
++++ b/opt/kata/share/defaults/kata-containers/configuration-qemu.toml
+@@ -11,9 +11,9 @@
+ # XXX:   Type: kata
+ 
+ [hypervisor.qemu]
+-path = "/opt/kata/bin/qemu-system-x86_64"
+-kernel = "/opt/kata/share/kata-containers/vmlinux.container"
+-image = "/opt/kata/share/kata-containers/kata-containers.img"
++path = "/usr/bin/qemu-system-x86_64"
++kernel = "/usr/kata/share/kata-containers/vmlinux.container"
++image = "/usr/kata/share/kata-containers/kata-containers.img"
+ machine_type = "pc"
+ 
+ # List of valid annotation names for the hypervisor
+@@ -24,10 +24,10 @@ enable_annotations = []
+ # List of valid annotations values for the hypervisor
+ # Each member of the list is a path pattern as described by glob(3).
+ # The default if not set is empty (all annotations rejected.)
+-# Your distribution recommends: ["/opt/kata/bin/qemu-system-x86_64"]
+-valid_hypervisor_paths = ["/opt/kata/bin/qemu-system-x86_64"]
++# Your distribution recommends: ["/usr/kata/bin/qemu-system-x86_64"]
++valid_hypervisor_paths = ["/usr/bin/qemu-system-x86_64"]
+ 
+-# Optional space-separated list of options to pass to the guest kernel.
++# Optional space-separated list of usrions to pass to the guest kernel.
+ # For example, use `kernel_params = "vsyscall=emulate"` if you are having
+ # trouble running pre-2.15 glibc.
+ #
+@@ -40,7 +40,7 @@ valid_hypervisor_paths = ["/opt/kata/bin/qemu-system-x86_64"]
+ kernel_params = ""
+ 
+ # Path to the firmware.
+-# If you want that qemu uses the default firmware leave this option empty
++# If you want that qemu uses the default firmware leave this usrion empty
+ firmware = ""
+ 
+ # Machine accelerators
+@@ -106,7 +106,7 @@ default_memory = 2048
+ #memory_offset = 0
+ 
+ # Specifies virtio-mem will be enabled or not.
+-# Please note that this option should be used with the command
++# Please note that this usrion should be used with the command
+ # "echo 1 > /proc/sys/vm/overcommit_memory".
+ # Default false
+ #enable_virtio_mem = true
+@@ -125,12 +125,12 @@ disable_block_device_use = false
+ shared_fs = "virtio-fs"
+ 
+ # Path to vhost-user-fs daemon.
+-virtio_fs_daemon = "/opt/kata/libexec/kata-qemu/virtiofsd"
++virtio_fs_daemon = "/usr/kata/libexec/kata-qemu/virtiofsd"
+ 
+ # List of valid annotations values for the virtiofs daemon
+ # The default if not set is empty (all annotations rejected.)
+-# Your distribution recommends: ["/opt/kata/libexec/kata-qemu/virtiofsd"]
+-valid_virtio_fs_daemon_paths = ["/opt/kata/libexec/kata-qemu/virtiofsd"]
++# Your distribution recommends: ["/usr/kata/libexec/kata-qemu/virtiofsd"]
++valid_virtio_fs_daemon_paths = ["/usr/kata/libexec/kata-qemu/virtiofsd"]
+ 
+ # Default size of DAX cache in MiB
+ virtio_fs_cache_size = 0
+@@ -140,7 +140,7 @@ virtio_fs_cache_size = 0
+ # Format example:
+ #   ["-o", "arg1=xxx,arg2", "-o", "hello world", "--arg3=yyy"]
+ #
+-# see `virtiofsd -h` for possible options.
++# see `virtiofsd -h` for possible usrions.
+ virtio_fs_extra_args = ["--thread-pool-size=1"]
+ 
+ # Cache mode:
+@@ -163,16 +163,16 @@ virtio_fs_cache = "auto"
+ # or nvdimm.
+ block_device_driver = "virtio-scsi"
+ 
+-# Specifies cache-related options will be set to block devices or not.
++# Specifies cache-related usrions will be set to block devices or not.
+ # Default false
+ #block_device_cache_set = true
+ 
+-# Specifies cache-related options for block devices.
++# Specifies cache-related usrions for block devices.
+ # Denotes whether use of O_DIRECT (bypass the host page cache) is enabled.
+ # Default false
+ #block_device_cache_direct = true
+ 
+-# Specifies cache-related options for block devices.
++# Specifies cache-related usrions for block devices.
+ # Denotes whether flush requests for the device are ignored.
+ # Default false
+ #block_device_cache_noflush = true
+@@ -213,7 +213,7 @@ vhost_user_store_path = "/var/run/kata-containers/vhost-user"
+ 
+ # Enable vIOMMU, default false
+ # Enabling this will result in the VM having a vIOMMU device
+-# This will also add the following options to the kernel's
++# This will also add the following usrions to the kernel's
+ # command line: intel_iommu=on,iommu=pt
+ #enable_iommu = true
+ 
+@@ -229,7 +229,7 @@ valid_vhost_user_store_paths = ["/var/run/kata-containers/vhost-user"]
+ # Enable file based guest memory support. The default is an empty string which
+ # will disable this feature. In the case of virtio-fs, this is enabled
+ # automatically and '/dev/shm' is used as the backing folder.
+-# This option will be ignored if VM templating is enabled.
++# This usrion will be ignored if VM templating is enabled.
+ #file_mem_backend = ""
+ 
+ # List of valid annotations values for the file_mem_backend annotation
+@@ -241,7 +241,7 @@ valid_file_mem_backends = [""]
+ # The behaviour is undefined if mem_prealloc is also set to true
+ #enable_swap = true
+ 
+-# This option changes the default hypervisor and kernel parameters
++# This usrion changes the default hypervisor and kernel parameters
+ # to enable debug output where available.
+ #
+ # Default false
+@@ -283,7 +283,7 @@ valid_file_mem_backends = [""]
+ #
+ # Default entropy source.
+ # The path to a host source of entropy (including a real hardware RNG)
+-# /dev/urandom and /dev/random are two main options.
++# /dev/urandom and /dev/random are two main usrions.
+ # Be aware that /dev/random is a blocking source of entropy.  If the host
+ # runs out of entropy, the VMs boot time will increase leading to get startup
+ # timeouts.
+@@ -371,7 +371,7 @@ valid_file_mem_backends = [""]
+ #
+ # If enabled, the default trace mode is "dynamic" and the
+ # default trace type is "isolated". The trace mode and type are set
+-# explicity with the `trace_type=` and `trace_mode=` options.
++# explicity with the `trace_type=` and `trace_mode=` usrions.
+ #
+ # Notes:
+ #
+@@ -417,7 +417,7 @@ kernel_modules=[]
+ #enable_netmon = true
+ 
+ # Specify the path to the netmon binary.
+-path = "/opt/kata/libexec/kata-containers/kata-netmon"
++path = "/usr/kata/libexec/kata-containers/kata-netmon"
+ 
+ # If enabled, netmon messages will be sent to the system log
+ # (default: disabled)
+@@ -460,7 +460,7 @@ disable_guest_seccomp=true
+ #enable_tracing = true
+ 
+ # If enabled, the runtime will not create a network namespace for shim and hypervisor processes.
+-# This option may have some potential impacts to your host. It should only be used when you know what you're doing.
++# This usrion may have some potential impacts to your host. It should only be used when you know what you're doing.
+ # `disable_new_netns` conflicts with `enable_netmon`
+ # `disable_new_netns` conflicts with `internetworking_model=tcfilter` and `internetworking_model=macvtap`. It works only
+ # with `internetworking_model=none`. The tap device will be in the host network namespace and can connect to a bridge
+-- 
+2.30.2
+
