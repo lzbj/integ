@@ -1,0 +1,16 @@
+opt/kata/bin/containerd-shim-kata-v2 /usr/bin/
+opt/kata/bin/kata-runtime /usr/bin/
+opt/kata/libexec/virtiofsd  /usr/kata/libexec/
+opt/kata/share/defaults/kata-containers/configuration-qemu.toml /etc/kata-containers/
+opt/kata/share/defaults/kata-containers/configuration.toml /etc/kata-containers/
+opt/kata/share/kata-containers/config-5.10.25 /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/config-5.19.2 /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/kata-alpine-3.15.initrd /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/kata-clearlinux-latest.image /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers-initrd.img /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/kata-containers.img /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/vmlinux-5.19.2-100 /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/vmlinux.container /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz-5.19.2-100 /var/kata/share/kata-containers/
+opt/kata/share/kata-containers/vmlinuz.container /var/kata/share/kata-containers/
+opt/kata/share/bash-completion/completions/kata-runtime /var/kata/share/bash-completion/completions/
