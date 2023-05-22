@@ -99,3 +99,4 @@ security/shim-unsigned
 security/openscap
 storage-drivers/trident-installer
 tools/kdump-tools
+kata-containers

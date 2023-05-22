@@ -1,0 +1,10 @@
+me: kata-containers
+debver: 3.1.1
+dl_path:
+  name: kata-static-3.1.1-x86_64.tar.xz
+  url: https://github.com/kata-containers/kata-containers/releases/download/3.1.1/kata-static-3.1.1-x86_64.tar.xz
+  md5sum: e68f265f4b67044850e24410c2227584 
+  sha256sum: 999bab0b362cdf856be6448d1ac4c79fa8d33e79a7dfd1cadaafa544f22ade83 
+revision:
+  dist: $STX_DIST
+  PKG_GITREVCOUNT: true
